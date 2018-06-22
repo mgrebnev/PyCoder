@@ -50,6 +50,11 @@ key = consoleArgumentsData.key
 isEncryptionMode = consoleArgumentsData.encrypt
 isDecryptionMode = consoleArgumentsData.decrypt
 
+# lol
+if isDecryptionMode ^ isEncryptionMode == False:
+    print 'Error! Choose encrypt or decrypt option (Use [-h] for more information)'
+    exit(0)
+
 if len(key) == 0:
     print 'Length of encription key must be not zero'
     exit(0)
@@ -75,6 +80,3 @@ else:
         aesEncryptor = AESEncryptor(key=key)
         decryptedData = str(aesEncryptor.decrypt(inputData))
         print decryptedData
-    else:
-        print 'Error! Choose encrypt or decrypt option (Use [-h] for more information)'
-        exit(0)
