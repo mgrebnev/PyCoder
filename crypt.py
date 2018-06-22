@@ -1,0 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+def test():
+    print 'Hello, World!'
+
+test()
