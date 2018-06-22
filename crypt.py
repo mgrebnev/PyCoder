@@ -70,13 +70,15 @@ while True:
     if isEncryptionMode == True:
         inputData += '\n'
 
-
-if isEncryptionMode:
-    aesEncryptor = AESEncryptor(key=key)
-    encryptedData = aesEncryptor.encrypt(data=inputData)
-    print encryptedData
-else:
-    if isDecryptionMode == True:
+try:
+    if isEncryptionMode:
         aesEncryptor = AESEncryptor(key=key)
-        decryptedData = str(aesEncryptor.decrypt(inputData))
-        print decryptedData
+        encryptedData = aesEncryptor.encrypt(data=inputData)
+        print encryptedData
+    else:
+        if isDecryptionMode == True:
+            aesEncryptor = AESEncryptor(key=key)
+            decryptedData = str(aesEncryptor.decrypt(inputData))
+            print decryptedData
+except Exception as e:
+    print str("Error: {}".format(e));
